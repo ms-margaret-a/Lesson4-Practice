@@ -3,3 +3,20 @@
 # Она отвечает за получение факториала числа. В цикле нужно выводить только первые n чисел, начиная с 1! и до n!.
 # Подсказка: факториал числа n — произведение чисел от 1 до n. Например, факториал четырёх 4! = 1 * 2 * 3 * 4 = 24.
 # !!! делала по разбору ДЗ
+
+from itertools import count
+def factor(n):
+    factorial = 1
+    for x in count(1):
+        if x > n:
+            break
+
+    factotial = factorial * x
+    yield factorial
+
+n = int(input("Введите целое положительное число: "))
+i = 0
+
+for el in factor(n):
+    i += 1
+    print(f"!{i} = {el}")
